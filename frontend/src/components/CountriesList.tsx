@@ -1,4 +1,5 @@
 import { useQuery } from "@apollo/client";
+import Link from "next/link";
 import { LIST_COUNTRIES } from "../graphql/queries/listCountries";
 import { Country } from "../types";
 
@@ -14,7 +15,9 @@ export default function CountriesList() {
     <ul>
       {data?.countries.map((country) => (
         <li key={country.id}>
-          {country.name} {country.emoji}
+          <Link href={`/countries/${country.code}`}>
+            {country.name} {country.emoji}
+          </Link>
         </li>
       ))}
     </ul>
