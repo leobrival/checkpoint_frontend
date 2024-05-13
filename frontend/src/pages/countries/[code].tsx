@@ -26,9 +26,21 @@ const CountryDetailPage = () => {
   return (
     <div>
       <Header />
-      <h1>
-        {country.name} {country.emoji}
-      </h1>
+      <div className="card">
+        <h1>
+          {country.name} {country.emoji}
+        </h1>
+        <p>
+          <strong>Code: </strong>
+          {country.code}
+        </p>
+        {country.continent && (
+          <p>
+            <strong>Continent: </strong>
+            {country.continent.name}
+          </p>
+        )}
+      </div>
     </div>
   );
 };

@@ -25,19 +25,20 @@ const AddCountryForm = () => {
         },
       });
       console.log("Country added:", data.addCountry);
-      // Vous pouvez ajouter ici une redirection ou une notification de succès
     } catch (err) {
       console.error("Error adding country:", err);
-      // Gérer les erreurs ici
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form">
       <div>
-        <label htmlFor="code">Code:</label>
+        <label className="label" htmlFor="code">
+          Code:
+        </label>
         <input
           type="text"
+          className="input"
           id="code"
           name="code"
           value={formData.code}
@@ -45,9 +46,12 @@ const AddCountryForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="name">Name:</label>
+        <label className="label" htmlFor="name">
+          Name:
+        </label>
         <input
           type="text"
+          className="input"
           id="name"
           name="name"
           value={formData.name}
@@ -55,19 +59,22 @@ const AddCountryForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="emoji">Emoji:</label>
+        <label className="label" htmlFor="emoji">
+          Emoji:
+        </label>
         <input
           type="text"
+          className="input"
           id="emoji"
           name="emoji"
           value={formData.emoji}
           onChange={handleChange}
         />
       </div>
-      <button type="submit" disabled={loading}>
+      <button type="submit" disabled={loading} className="button">
         Add Country
       </button>
-      {error && <p>Error: {error.message}</p>}
+      {error && <p className="error">Error: {error.message}</p>}
     </form>
   );
 };

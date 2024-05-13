@@ -12,11 +12,11 @@ export default function CountriesList() {
   if (error) return <p>Erreur : {error.message}</p>;
 
   return (
-    <ul>
+    <ul className="list">
       {data?.countries.map((country) => (
-        <li key={country.id}>
-          <Link href={`/countries/${country.code}`}>
-            {country.name} {country.emoji}
+        <li key={country.id} className="item">
+          <Link className="link" href={`/countries/${country.code}`}>
+            {country.name} <span className="emoji">{country.emoji}</span>
           </Link>
         </li>
       ))}
